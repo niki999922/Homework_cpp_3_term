@@ -77,8 +77,8 @@ int main() {
     cout << sum((float)3.0, 5.0) << " = 8.0" << endl;
     some_func(1, 5, 123, 3, 5, 4, 3, 2, 1, 0);
     foo();
-    cout << "Without use def arg = "<< def_arg(15) << endl;
-    cout << "With use def arg = "<< def_arg() << endl;
+    cout << "Without use def arg = " << def_arg(15) << endl;
+    cout << "With use def arg = " << def_arg() << endl;
     int a = 11, b = 13;
     cout << "Pre: " << endl;
     cout << "a = " << a << " b = " << b << endl;
