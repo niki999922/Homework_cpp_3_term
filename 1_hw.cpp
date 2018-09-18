@@ -3,30 +3,21 @@
 class Person;
 
 class Person {
-private:
-    std::string name, surename;
-    std::string Account_number;
-    long size;
-    long *mas;
-
-protected:
-    std::string childrens;
-
 public:
-    Person(std::string name_user, std::string surename_user, std::string Account, long size_mas) :
-        name(name_user),
-        surename(surename_user),
-        Account_number(Account),
-        size(size_mas)  {
+    Person(std::string userName, std::string userSurename, std::string account, long sizeMas) :
+        name(userName),
+        surename(userSurename),
+        accountNumber(account),
+        size(sizeMas)  {
         mas = new long[size];
     }
 
-    //when name and surename : name === sure_name
-    Person(std::string name_user, std::string Account, long size_mas) {
-        this->name = name_user;
-        this->surename = name_user;
-        this->Account_number = Account;
-        this->size = size_mas;
+    //Pre : name === surename
+    Person(std::string userName, std::string account, long sizeMas) {
+        this->name = userName;
+        this->surename = userName;
+        this->accountNumber = account;
+        this->size = sizeMas;
         this->mas = new long[size];
     }
 
@@ -34,16 +25,16 @@ public:
         delete [] mas;
     }
 
-    std::string get_name() {
+    std::string getName() {
         return name;
     }
 
-    std::string get_surename() {
+    std::string getSurename() {
         return surename;
     }
 
-    std::string get_Account_number() {
-        return Account_number;
+    std::string getAccountNumber() {
+        return accountNumber;
     }
 
     static int sum(int a, int b) {
@@ -55,69 +46,75 @@ public:
     }
 
     //Can be rewrited with templates
-    static void some_func(int arg, ...) {
+    static void someFunction(int arg, ...) {
         int *p1 = &arg;
         while (*p1) {
             std::cout << *p1 << " ";
             p1++;
         }
-        std::cout << std::endl;
+        std::cout << '\n';
     }
 
     static void foo() {
         std::cout << "void function" << std::endl;
     }
 
-    static int def_arg(int b = 100000) {
+    static int defArg(int b = 100000) {
         return b;
     }
 
-    static void pass_by_value(int a, int b) {
+    static void passByValue(int a, int b) {
         a = a ^ b;
         b = a ^ b;
         a = a ^ b;
     }
 
-    static void pass_by_reference(int& a, int& b) {
+    static void passByReference(int& a, int& b) {
         a = a ^ b;
         b = a ^ b;
         a = a ^ b;
     }
 
-    static int& return_by_reference(int a) {
+    static int& returnByReference(int a) {
         int l = 7;
         l += a;
         return l;
     }
 
-    int some_f(int);
+    int pow2(int);
+
+protected:
+    std::string childrens;
+
+private:
+    std::string name, surename;
+    std::string accountNumber;
+    long size;
+    long *mas;
 };
 
-int Person::some_f(int a) {
-    return a * 2;
+int Person::pow2(int a) {
+    return a * a;
 }
 
-
-int main() {
+int main(int argc, char* argv[]) {
     Person Nikita("Nikita", "Kochetkov", "312f123as", rand() % 1000 + 1);
     Person *Alena = new Person("Alena", "Mordvinceva", "321sd23sa2f", rand() % 1000 +1);
     delete Alena;
     std::cout << static_cast<long>(pow(13,3)) << std::endl;
     std::cout << Person::sum(3, 4) << " = 7" << std::endl;
     std::cout << Person::sum((float)3.0, 5.0) << " = 8.0" << std::endl;
-    Person::some_func(1, 5, 123, 3, 5, 4, 3, 2  , 1, 0);
+    Person::someFunction(1, 5, 123, 3, 5, 4, 3, 2, 1, 0);
     Person::foo();
-    std::cout << "Without use def arg = " << Person::def_arg(15) << std::endl;
-    std::cout << "With use def arg = " << Person::def_arg() << std::endl;
+    std::cout << "Without use def arg = " << Person::defArg(15) << std::endl;
+    std::cout << "With use def arg = " << Person::defArg() << std::endl;
     int a = 11, b = 13;
-    std::cout << "Pre: " << std::endl;
-    std::cout << "a = " << a << " b = " << b << std::endl;
-    Person::pass_by_value(a, b);
-    std::cout << "value a = " << a << " b = " << b << std::endl;
-    Person::pass_by_reference(a, b);
+    std::cout << "Was:      a = " << a << " b = " << b << std::endl;
+    Person::passByValue(a, b);
+    std::cout << "value:    a = " << a << " b = " << b << std::endl;
+    Person::passByReference(a, b);
     std::cout << "reference a = " << a << " b = " << b << std::endl;
-    //why it's work?   
-    int &t = Person::return_by_reference(4);
+    int &t = Person::returnByReference(4);
     std::cout << t << std::endl;
     system("pause");
     return 0;
