@@ -4,20 +4,23 @@ class Person;
 
 class Person {
 public:
-    Person(std::string userName, std::string userSurename, std::string account, long sizeMas) :
+    Person(std::string userName, std::string userSurename, std::string account, long sizeMas, long cash) :
         name(userName),
         surename(userSurename),
         accountNumber(account),
-        size(sizeMas)  {
+        size(sizeMas),  
+        cash(cash) 
+    {
         mas = new long[size];
     }
 
     //Pre : name === surename
-    Person(std::string userName, std::string account, long sizeMas) {
+    Person(std::string userName, std::string account, long sizeMas, long cash) {
         this->name = userName;
         this->surename = userName;
         this->accountNumber = account;
         this->size = sizeMas;
+        this->cash = cash;
         this->mas = new long[size];
     }
 
@@ -35,6 +38,10 @@ public:
 
     std::string getAccountNumber() {
         return accountNumber;
+    }
+
+    long getCash() {
+        return cash;
     }
 
     static int sum(int a, int b) {
@@ -75,10 +82,8 @@ public:
         a = a ^ b;
     }
 
-    static int& returnByReference(int a) {
-        int l = 7;
-        l += a;
-        return l;
+    static Person& maxCashReturnByReference(Person& p1, Person& p2) {
+        return (p1.getCash() > p2.getCash()) ? p1 : p2;
     }
 
     int pow2(int);
@@ -90,6 +95,7 @@ private:
     std::string name, surename;
     std::string accountNumber;
     long size;
+    long cash;
     long *mas;
 };
 
@@ -97,9 +103,11 @@ int Person::pow2(int a) {
     return a * a;
 }
 
+
 int main(int argc, char* argv[]) {
-    Person Nikita("Nikita", "Kochetkov", "312f123as", rand() % 1000 + 1);
-    Person *Alena = new Person("Alena", "Mordvinceva", "321sd23sa2f", rand() % 1000 +1);
+    Person Nikita("Nikita", "Kochetkov", "312f123as", rand() % 1000 + 1,1000);
+    Person *Alena = new Person("Alena", "Mordvinceva", "321sd23sa2f", rand() % 1000 +1,17000);
+    std::cout << Person::maxCashReturnByReference(Nikita, *Alena).getCash() << std::endl;
     delete Alena;
     std::cout << static_cast<long>(pow(13,3)) << std::endl;
     std::cout << Person::sum(3, 4) << " = 7" << std::endl;
@@ -114,8 +122,6 @@ int main(int argc, char* argv[]) {
     std::cout << "value:    a = " << a << " b = " << b << std::endl;
     Person::passByReference(a, b);
     std::cout << "reference a = " << a << " b = " << b << std::endl;
-    int &t = Person::returnByReference(4);
-    std::cout << t << std::endl;
     system("pause");
     return 0;
 }
