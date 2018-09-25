@@ -6,12 +6,9 @@ public:
         std::cout << "_______________________\n\n";
         std::cout << "Enter the value of admno: ";
         std::cin >> admno;
-        std::cout << "Enter the value of sname:\n";
-        for (size_t i = 0; i < 20; ++i) {
-            std::cout << "sname[" << i << "] = ";
-            std::cin >> sname[i];
-        }
-        std::cout << "Enter the value of eng: ";
+        std::cout << "Enter the value of sname: ";
+        std::cin >> sname;
+        std::cout << "Enter the value of english: ";
         std::cin >> english;
         std::cout << "Enter the value of science: ";
         std::cin >> science;
@@ -20,23 +17,11 @@ public:
         total = cTotal();
     }
 
-    void takeData(int admno, char* sname, float english, float maths, float science) {
-        this->admno = admno;
-        for (size_t i = 0; i < 20; ++i) {
-            this->sname[i] = sname[i];
-        }
-        this->english = english;
-        this->maths = maths;
-        this->science = science;
-        total = cTotal();
-    }
-    
     void showData() {
         std::cout << "_______________________\n\n";
         std::cout << "admno: " << admno << '\n';
-        std::cout << "sname: ";
-        for(size_t i = 0; i < 20; ++i) std::cout << sname[i] << ' ';
-        std::cout << "\neng: " << english << '\n';
+        std::cout << "sname: " << sname << '\n';
+        std::cout << "english: " << english << '\n';
         std::cout << "science: " << science << '\n';
         std::cout << "maths: " << maths << '\n';
         std::cout << "total: " << total << '\n';
@@ -55,14 +40,8 @@ private:
 
 
 int main(int argc, char* argv[]) {
-    char* mas = new char[20];
-    for (size_t i = 0; i < 20; ++i) {
-        mas[i] = static_cast<char>(rand() % 256);
-    }
     Student student;
     student.takeData();
-    student.showData();
-    student.takeData(rand() % 100 + 4, mas, rand() % 10 + 4, rand() % 10 + 4, rand() % 10 + 4);
     student.showData();
     system("pause");
     return 0;
@@ -71,7 +50,7 @@ int main(int argc, char* argv[]) {
 
 /*
 
-Необходимо реализовать класс student  
+You have to realize class student  
 Private members of class student:
 admno integer
 sname 20 character 
