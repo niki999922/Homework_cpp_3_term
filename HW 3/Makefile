@@ -21,7 +21,7 @@ create_exe_sl : main.obj libmy.lib
 
 # name have to be with pref = lib and suff = .a or for Unix system .lib (may be)
 libmy.lib: hello.obj here.obj bye.obj
-	ar cr libmy.lib hello.obj here.obj bye.obj
+	 ar crs libmy.lib hello.obj here.obj bye.obj
 
 create_exe_dl: main.obj libmylib.dll.5.1.10
 	g++ $(CFLAGS) main.obj -L. libmylib.dll.5.1.10 -o TestProgram
@@ -46,4 +46,3 @@ full_clean:
 
 %.obj: %.cpp
 	g++ $(CFLAGS) -c $^ -o $@
-
