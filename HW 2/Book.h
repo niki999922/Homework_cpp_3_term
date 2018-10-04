@@ -11,7 +11,7 @@ public:
 private:
     static const int NUMBER_BOOK_TITLE = 20;
     int mBookNumber;
-    char mBookTitle[NUMBER_BOOK_TITLE] = {""};
+    char mBookTitle[NUMBER_BOOK_TITLE + 1] = {""};
     float mPrice;
 
     float mTotalCost(const int& n = 1) const;

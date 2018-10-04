@@ -25,10 +25,11 @@ void Book::input() {
     cout << "Enter book title: \n";
     cout << "Max lenght : " << NUMBER_BOOK_TITLE << '\n';
     cin >> str;
-    if (str.length() > 20) {
+    if (str.length() > NUMBER_BOOK_TITLE) {
         for (size_t i = 0; i < 20; ++i) 
             mBookTitle[i] = str[i];
     }
+    mBookTitle[NUMBER_BOOK_TITLE] = '\0';
     cout << "Enter book price: ";
     cin >> mPrice;
 }
