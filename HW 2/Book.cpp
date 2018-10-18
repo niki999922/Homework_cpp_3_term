@@ -26,7 +26,7 @@ void Book::input() {
     cout << "Max lenght : " << NUMBER_BOOK_TITLE << '\n';
     cin >> str;
     if (str.length() > NUMBER_BOOK_TITLE) {
-        for (size_t i = 0; i < 20; ++i) 
+        for (size_t i = 0; i < NUMBER_BOOK_TITLE + 1; ++i) 
             mBookTitle[i] = str[i];
     }
     mBookTitle[NUMBER_BOOK_TITLE] = '\0';
