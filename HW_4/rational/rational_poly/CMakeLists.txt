@@ -9,7 +9,6 @@ target_link_libraries(rational_poly lib_rational polynom)
 install(
 	TARGETS rational_poly
 	COMPONENT user
-	RUNTIME
 		DESTINATION bin)
 install(
 	TARGETS rational_poly

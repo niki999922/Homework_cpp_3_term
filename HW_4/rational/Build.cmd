@@ -1,6 +1,6 @@
-cls
 mkdir _build
 cd _build
+
 set PATH=C:\Users\Nikita\source\repos\Homework_cpp_3_term\HW_4\rational;%PATH%
 
 cmake^
@@ -10,4 +10,3 @@ cmake^
 	
 mingw32-make
 cmake -D COMPONENT=developer -P cmake_install.cmake
-cd ..

@@ -1,5 +1,7 @@
 project(lib_rational)
 
+set(BUILD_SHARED_LIBS ON)
+
 add_library(lib_rational lib_rational.cpp lib_rational.h)
 
 get_property(

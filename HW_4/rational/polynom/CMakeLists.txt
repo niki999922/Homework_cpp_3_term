@@ -1,5 +1,7 @@
 project(polynom)
 
+set(BUILD_SHARED_LIBS ON)
+
 add_library(polynom polynom.cpp polynom.h)
 include_directories(../lib_rational)
 
