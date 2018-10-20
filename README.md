@@ -1,6 +1,13 @@
 # Homework_cpp_3_term
+1. Домашние задания
+ * [Домашка №1](#HW1);
+ * [Домашка №2](#HW2);
+ * [Домашка №3](#HW3);
+ * [Домашка №4](#HW4);
+2. Полезные ссылки
+ * [Ссылки](#links);
 
-## First HW
+## <a name="HW1"></a> First HW
 
 
 ```
@@ -12,7 +19,7 @@
 6. Write  a Program to demonstrate  constructors.
 ```
 
-## Second HW
+## <a name="HW2"></a> Second HW
 
 ```
 You have to realize class **Student**  
@@ -31,7 +38,7 @@ Showdata()
     Function to display all the data members on the screen
 ```
 
-## Third HW
+## <a name="HW3"></a> Third HW
 
 ```
 * Напишите простые файлы  hello.cpp, here.cpp, bye.cpp, mylib.h . В hello.cpp, функция должна выводить "Hello!";
@@ -44,14 +51,14 @@ Showdata()
 * Установите  minor версию .1 и релиз .10. 
 Таким образом вы получите динамическую библиотеку с именем файла "libmylib.so.5.1.10" c установленными .so ссылками
 ```
-## Fourth HW
+## <a name="HW4"></a> Fourth HW
 
 ![HW_4_pic_1](/img/HW_4_pic_1.jpg)
 
 ![HW_4_pic_1](/img/HW_4_pic_1.jpg)
 
 
-## Useful links
+## <a name="links"></a> Useful links
 
 * [Страничка курса](http://neerc.ifmo.ru/teaching/cpp/year2017/sem3/)
 * [Книжка по CMake](http://ru.b-ok.org/book/2933576/d7760f)
