@@ -15,7 +15,7 @@
 ## Second HW
 
 ```
-You have to realize class student  
+You have to realize class **Student**  
 Private members of class student:
 admno integer
 sname 20 character 
@@ -44,3 +44,14 @@ Showdata()
 * Установите  minor версию .1 и релиз .10. 
 Таким образом вы получите динамическую библиотеку с именем файла "libmylib.so.5.1.10" c установленными .so ссылками
 ```
+## Fourth HW
+
+![HW_4_pic_1](/img/HW_4_pic_1.jpg)
+
+![HW_4_pic_1](/img/HW_4_pic_1.jpg)
+
+
+## Useful links
+
+* [Страничка курса](http://neerc.ifmo.ru/teaching/cpp/year2017/sem3/)
+* [Книжка по CMake](http://ru.b-ok.org/book/2933576/d7760f)
