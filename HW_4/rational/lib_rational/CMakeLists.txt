@@ -2,16 +2,16 @@ project(lib_rational)
 
 set(BUILD_SHARED_LIBS ON)
 
-add_library(lib_rational lib_rational.cpp lib_rational.h)
+add_library(${PROJECT_NAME} lib_rational.cpp lib_rational.h)
 
 get_property(
 	LIB_TYPE
-	TARGET lib_rational
+	TARGET ${PROJECT_NAME}
 	PROPERTY TYPE)
 
 if(LIB_TYPE STREQUAL SHARED_LIBRARY)
 	install(
-		TARGETS lib_rational
+		TARGETS ${PROJECT_NAME}
 		COMPONENT user
 		RUNTIME
 			DESTINATION bin
@@ -21,8 +21,8 @@ endif()
 
 
 install(
-	TARGETS lib_rational
-	EXPORT lib_rational
+	TARGETS ${PROJECT_NAME}
+	EXPORT ${PROJECT_NAME}
 	COMPONENT developer
 	RUNTIME
 		DESTINATION bin
@@ -39,6 +39,6 @@ install(
 		PATTERN "*.h")
 
 install(
-	EXPORT lib_rational
+	EXPORT ${PROJECT_NAME}
 	DESTINATION share
 	COMPONENT developer)

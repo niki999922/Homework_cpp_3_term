@@ -2,20 +2,20 @@ project(polynom)
 
 set(BUILD_SHARED_LIBS ON)
 
-add_library(polynom polynom.cpp polynom.h)
+add_library(${PROJECT_NAME} polynom.cpp polynom.h)
 include_directories(../lib_rational)
 
-target_link_libraries(polynom lib_rational)
+target_link_libraries(${PROJECT_NAME} lib_rational)
 
 
 get_property(
 	LIB_TYPE
-	TARGET polynom
+	TARGET ${PROJECT_NAME}
 	PROPERTY TYPE)
 
 if(LIB_TYPE STREQUAL SHARED_LIBRARY)
 	install(
-		TARGETS polynom
+		TARGETS ${PROJECT_NAME}
 		COMPONENT user
 		RUNTIME
 			DESTINATION bin
@@ -25,8 +25,8 @@ endif()
 
 
 install(
-	TARGETS polynom
-	EXPORT polynom
+	TARGETS ${PROJECT_NAME}
+	EXPORT ${PROJECT_NAME}
 	COMPONENT developer
 	RUNTIME
 		DESTINATION bin
@@ -43,6 +43,6 @@ install(
 		PATTERN "*.h")
 
 install(
-	EXPORT polynom
+	EXPORT ${PROJECT_NAME}
 	DESTINATION share
 	COMPONENT developer)
