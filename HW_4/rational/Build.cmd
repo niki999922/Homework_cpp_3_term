@@ -10,3 +10,5 @@ cmake^
 	
 mingw32-make
 cmake -D COMPONENT=developer -P cmake_install.cmake
+
+cd ..
