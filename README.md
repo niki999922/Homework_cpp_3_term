@@ -119,10 +119,11 @@ s.append(s); // теперь s хранит "HelloHello"
 ## <a name="HW7"></a> Seventh HW
 [Homework 7](/pdf/hw7.pdf)
 
-#[Homework 7]://addons.mozilla.org/firefox/addon/1865/
 ## <a name="HW8"></a> Eighth HW
+[Homework 8](/pdf/hw8.pdf)
 
 ## <a name="HW9"></a> Ninth HW
+[Homework 9](/pdf/hw9.pdf)
 
 ## <a name="links"></a> Useful links
 
