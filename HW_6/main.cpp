@@ -1,64 +1,62 @@
 #include <iostream>
-#include "Person.h"
+#include "Date.h"
 
 using std::cout;
 using std::cin;
 
-void test1() {
-    Person p1("TOM",227), p2("MAX", 96);
-    cout << "p1: " << p1 << "\n\n";
-    cout << "p2: " << p2 << "\n\n";
+void test() {
+    Date d1(24, 5, 180), d2(-5,-8, 212);
+    cout << "d1: " << d1 << "\n\n";
+    cout << "d2: " << d2 << "\n\n";
     
-    cout << "p1 == p2 " << (p1 == p2) << "\n\n";
-    cout << "p1 > p2 " << (p1 > p2) << "\n\n";
-    cout << "p1 >= p2 " << (p1 >= p2) << "\n\n";
-    cout << "p1 < p2 " << (p1 < p2) << "\n\n";
-    cout << "p1 <= p2 " << (p1 <= p2) << "\n\n";
-    cout << "p1 != p2 " << (p1 != p2) << "\n\n";
+    cout << "d1 == d2 " << (d1 == d2) << "\n\n";
+    cout << "d1 > d2 " << (d1 > d2) << "\n\n";
+    cout << "d1 >= d2 " << (d1 >= d2) << "\n\n";
+    cout << "d1 < d2 " << (d1 < d2) << "\n\n";
+    cout << "d1 <= d2 " << (d1 <= d2) << "\n\n";
+    cout << "d1 != d2 " << (d1 != d2) << "\n\n";
     
-    cout << "~p1: " << ~p1 << "\n\n";
-    cout << "!p1 " << !(p1) << "\n\n";
-    cout << "p1 && p2 " << (p1 && p2) << "\n\n";
-    cout << "p1 || p2 " << (p1 || p2) << "\n\n";
+    cout << "~d1: " << ~d1 << "\n\n";
+    cout << "!d1 " << !d1 << "\n\n";
+    cout << "d1 && d2 " << (d1 && d2) << "\n\n";
+    cout << "d1 || d2 " << (d1 || d2) << "\n\n";
 
-    cout << "p1 << p2: " << (p1 << p2) << "\n\n";
-    cout << "p1 >> p2: " << (p1 >> p2) << "\n\n";
+    cout << "d1 << d2: " << (d1 << 4) << "\n\n";
+    cout << "d1 >> d2: " << (d1 >> 6) << "\n\n";
 
-    cout << "*p1: " << *p1 << "\n\n";
+    cout << "&d1: " << (&d1) << "\n\n";
     
-    cout << "&p1: " << (&p1) << "\n\n";
+    cout << "d1[]: " << d1[1] << "\n\n";
     
-    cout << "p1[]: " << p1[1] << "\n\n";
+    d1++;
+    ++d1;
+    d2++;
+    ++d2;
+    d1(5);
+    d2(12);
     
-    p1++;
-    ++p1;
-    p2++;
-    ++p2;
-    p1();
-    p2();
+    cout << "d1 + d2 " << (d1 + d2) << "\n\n";
+    cout << "d1 - d2 " << (d1 - d2) << "\n\n";
+    cout << "d1 * d2 " << (d1 * d2) << "\n\n";
+    cout << "d1 / d2 " << (d1 / d2) << "\n\n";
+    cout << "d1 ^ d2 " << (d1 ^ d2) << "\n\n";
+    cout << "d1 | d2 " << (d1 | d2) << "\n\n";
     
-    cout << "p1 + p2 " << (p1 + p2) << "\n\n";
-    cout << "p1 - p2 " << (p1 - p2) << "\n\n";
-    cout << "p1 * p2 " << (p1 * p2) << "\n\n";
-    cout << "p1 / p2 " << (p1 / p2) << "\n\n";
-    cout << "p1 ^ p2 " << (p1 ^ p2) << "\n\n";
-    cout << "p1 | p2 " << (p1 | p2) << "\n\n";
-    cout << "p1  p2 " << (p1 | p2) << "\n\n";
+    cout << "d1, d2 " << (d1, d2) << "\n\n";
 
-    cout << "p1, p2 " << (p1, p2) << "\n\n";
-
-    cout << "p1: " << p1 << "\n\n";
+    cout << "d1: " << d1 << "\n\n";
     
-    p1 += p2;
-    p1 -= p2;
-    p1 ^= p2;
-    p1 |= p2;
-    p1 *= p2;
-    p1 /= p2;
+    d1 += d2;
+    d1 -= d2;
+    d1 ^= d2;
+    d1 |= d2;
+    d1 *= d2;
+    d1 /= d2;
 }
 
+
+
 int main(int argc, const char* argv[]) {
-    test1();
-    system("pause");
+    test();
     return 0;
 }
