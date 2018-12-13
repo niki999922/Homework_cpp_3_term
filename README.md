@@ -9,6 +9,7 @@
  * [Домашка №7](#HW7);
  * [Домашка №8](#HW8);
  * [Домашка №9](#HW9);
+ * [Домашка №10](#HW10);
 2. Полезные ссылки
  * [Ссылки](#links);
 
@@ -124,6 +125,9 @@ s.append(s); // теперь s хранит "HelloHello"
 
 ## <a name="HW9"></a> Ninth HW
 [Homework 9](/pdf/hw9.pdf)
+
+## <a name="HW9"></a> Ninth HW
+[Homework 10](/pdf/hw10.pdf)
 
 ## <a name="links"></a> Useful links
 
