@@ -126,7 +126,7 @@ s.append(s); // теперь s хранит "HelloHello"
 ## <a name="HW9"></a> Ninth HW
 [Homework 9](/pdf/hw9.pdf)
 
-## <a name="HW9"></a> Ninth HW
+## <a name="HW10"></a> Tenth HW
 [Homework 10](/pdf/hw10.pdf)
 
 ## <a name="links"></a> Useful links
