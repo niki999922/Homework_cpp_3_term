@@ -1,0 +1,5 @@
+4
+4 -a Fast Enumeration Dijkstra
+4 -m Discrete My Euclidean
+1 -o
+1 -map
