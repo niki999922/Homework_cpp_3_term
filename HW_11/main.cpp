@@ -4,22 +4,10 @@
 #include <typeinfo>
 
 #include "BadFromStringException.h"
+#include "ConvertString.h"
+
 
 using std::string;
-
-template<class T>
-T from_string(string data) {
-    std::istringstream stringStream(data);
-    if (typeid(T).name() != typeid(string).name()) stringStream >> std::noskipws;
-    T value;
-    stringStream >> value;
-    if (stringStream.fail() || (stringStream.get() && !stringStream.eof())) {
-        std::stringstream tmp;
-        tmp << "Can't convert from string to " << typeid(T).name() << ".";
-        throw BadFromStringException(tmp.str());
-    }
-    return value;
-}
 
 void test1() {
     std::cout << "Start testing #1...\n";
