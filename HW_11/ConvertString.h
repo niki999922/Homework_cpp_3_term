@@ -3,3 +3,6 @@
 
 template<class T>
 T from_string(std::string data);
+
+
+#include "ConvertString.hpp"

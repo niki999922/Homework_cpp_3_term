@@ -36,12 +36,12 @@ void test1() {
     catch (...) {
         std::cout << "Error!\n";
     }
-
+    
     try {
         string  s3("abc");
         int    a3 = from_string<int>(s3); // exception    
         std::cout << a3 << '\n';
-        double b3 = from_string<double>(s3); // exception
+        double b3 = from_string<double>(s3); // exception, don't go here, because previous
         std::cout << b3 << '\n';
         string c3 = from_string<string>(s3); // c3 = "abc"
         std::cout << c3 << '\n';
@@ -61,11 +61,9 @@ void test2() {
     try {
         string s(" abc");
         string a = from_string<string>(s);
-    }
-    catch (BadFromStringException& e) {
+    } catch (BadFromStringException& e) {
         std::cout << e.what() << '\n';
-    }
-    catch (...) {
+    } catch (...) {
         std::cout << "Error!\n";
     }
 
@@ -85,7 +83,7 @@ void test2() {
         int a = from_string<int>(s); // exception    
     }
     catch (BadFromStringException& e) {
-        std::cout << e.what() << '\n';
+        std::cout << e.what() <<'\n';
     }
     catch (...) {
         std::cout << "Error!\n";
